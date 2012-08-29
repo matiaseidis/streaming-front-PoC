@@ -1,0 +1,26 @@
+<h2>${_video.nombre}</h2>
+
+#{poster video:_video /}
+#{etiquetas video:_video /}
+#{puntuacion video:_video /}
+#{compartidoPor video:_video /}
+#{publicado video:_video /}
+#{ver video:_video /}
+
+<table>
+<tbody>
+<tr>
+<td><h6><b>Año: </b></h6></td>
+<td>${_video.creado}</td>
+</tr>
+<tr>
+<td><h6><b>Duración: </b></h6></td>
+<td>${_video.duracion} min</td>
+</tr>
+<tr>
+<td><h6><b>Sinopsis: </b></h6></td>
+<td>${_video.sinopsis}</td>
+</tr>
+
+</tbody>
+</table>

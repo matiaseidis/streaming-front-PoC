@@ -1,0 +1,36 @@
+<h2>${_video.nombre}</h2>
+#{etiquetas video:_video /}
+<br>
+#{posterChico video:_video /} #{puntuacion video:_video /}
+#{compartidoPor video:_video /}
+<h5>Año: ${_video.creado}</h5>
+<h5>Duración: ${_video.duracion} min</h5>
+<h5>Sinopsis: ${_video.sinopsis}</h5>
+<br>
+#{ver video:_video /} ddd
+<!-- basic exemple -->
+<div class="example">
+	<!-- in this exemple, 12 is the average and 1 is the id of the line to update in DB -->
+	<div class="basic" id="20_10"></div>
+	<!-- in this other exemple, 8 is the average and 2 is the id of the line to update in DB -->
+	<!-- <div class="basic" id="8_2"> -->
+</div>
+</div>
+ddd #{set 'moreScripts'} #{get 'moreScripts' /}
+<script type="text/javascript"> 
+$(function(){ 
+	$(".basic").jRating(
+			{ 
+// 				step:true, 
+				length : 20, 
+				decimalLength:1,
+				rateMax:20,
+				isDisabled: false,
+				onSuccess : function(){ 
+					alert('Success : your rate has been saved :)'); 
+				} 
+			}
+		); 
+	}); 
+</script>
+#{/set}

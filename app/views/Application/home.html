@@ -1,0 +1,29 @@
+#{extends 'main.html' /} #{set title:'striminTV' /}
+
+<h1>cAcHo tV</h1>
+<br><br>
+TODO 
+<br>
+captcha antes de ver video<br>
+comunicacion con el indice para:<br><br>
+alta de user
+<br>
+alta de video
+<br>
+comunicacion con el dimon para:
+<br>
+getRetrievalPlan:
+<br>
+getProgress
+<br><br>
+todos los videos
+<br><br>
+    <form class="form-search" action="@{Application.buscar()}" method="POST">
+    <input type="text" class="input-medium search-query" name="searchParam">
+    <button type="submit" class="btn">Search</button>
+    </form>
+    <br><br>
+ #{list items:videos, as:'video'}
+ #{video video:video /}
+  <hr>
+  #{/list}

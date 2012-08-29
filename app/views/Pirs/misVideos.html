@@ -1,0 +1,52 @@
+#{extends 'main.html' /} #{set title:'mis videos' /}
+<h3>
+	<i class="icon-film"></i> mis videos
+</h3>
+<div id="movie-search-no-results"></div>
+<br>
+<div id="movie-search-results"></div>
+<br>
+<table class="table table-bordered table-striped table-condensed">
+	<thead>
+		<tr>
+			<td>nombre</td>
+			<td>id</td>
+			<td>creado</td>
+			<td>publicado</td>
+	</thead>
+	#{list items:misVideos, as:'video'}
+	<tbody>
+		<tr>
+			<td>
+			#{if video.publicado}
+			<a href="@{Videos.detalle(video.id)}">
+			#{/if}
+			${video.nombre}
+			#{if video.publicado}
+			</a>
+			#{/if}
+			</td>
+			<td>${video.videoId}</td>
+			<td>${video.creado}</td>
+			<td>
+			#{if video.publicado} <i class="icon-ok"></i> #{/if} 
+			#{else}
+				<i class="icon-remove"></i> <a
+				title="Publicar"
+				onclick='javascript:buscarFicha("${video.nombre}","${video.videoId}")'
+				href="#">buscar ficha del video</a> #{/else}
+			</td>
+
+			
+		</tr>
+	</tbody>
+	#{/list}
+</table>
+<div class="modal hide fade" id="ficha"></div>
+
+#{set 'moreScripts'} #{get 'moreScripts' /}
+<script src="@{'/public/javascripts/cachos/videoNuevo.js'}"></script>
+#{/set}
+<style>
+	.video-result{min-height:240px;}
+</style>

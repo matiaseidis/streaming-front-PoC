@@ -1,0 +1,82 @@
+#{extends 'main.html' /} #{set title:"${video.nombre}" /}
+
+
+<h2>${video.nombre}</h2>
+<br><br>
+
+
+<script type='text/javascript' src="@{'/public/javascripts/flowplayer/flowplayer-3.2.11.min.js'}"></script>
+<div style='padding-left: 50px;'><a style='display:block;width:700px;height:450px;margin:5px auto' id='player'> </a></div>
+
+<script>
+flowplayer("player", "@{'/public/javascripts/flowplayer/flowplayer-3.2.12.swf'}", {
+	clip: {
+		autoPlay:false,
+		autoBuffering:true,
+    	provider: 'pseudo',
+		scaling:'fit',
+		//url: 'http://186.23.108.31:8080/stream/?id=<?php print $output; ?>',
+				url:'http://localhost/evian.mp4',
+		captionUrl: 'http://localhost/Luther-02x01-SP.srt'
+	}, 
+	plugins: {
+        pseudo: {
+            url: "@{'/public/javascripts/flowplayer.pseudostreaming/flowplayer.pseudostreaming-3.2.9.swf'}"
+        },
+        controls: {
+			url: "@{'/public/javascripts/flowplayer/flowplayer.controls-3.2.12.swf'}",
+			//autoHide: 'never',
+			// display properties
+			bottom:0,
+			height:24,
+			zIndex:1,
+			backgroundColor: '#2d3e46',
+			backgroundGradient: 'low',
+	
+			// controlbar-specific configuration
+			fontColor: '#ffffff',
+			timeFontColor: '#333333',
+         
+			// which buttons are visible and which are not?
+			all:true
+		},
+		autoHide: {
+			enabled: true,
+            // always enable
+			fullsccreenOnly: true,
+			// make it hide faster
+			hideDelay: 1000,
+            mouseOutDelay: 500
+        },
+		
+		captions: {
+			url: "@{'/public/javascripts/flowplayer.captions/flowplayer.captions-3.2.8.swf'}",
+
+			// pointer to a content plugin (see below)
+			captionTarget: 'content'
+		},
+
+		// configure a content plugin so that it
+		// looks good for showing subtitles
+		content: {
+			url: "@{'/public/javascripts/flowplayer.content/flowplayer.content-3.2.8.swf'}",
+			bottom: 25,
+			height:40,
+			backgroundColor: 'transparent',
+			backgroundGradient: 'none',
+			border: 0,
+			textDecoration: 'outline',
+			style: {
+				body: {
+					fontSize: 16,
+					fontFamily: 'Arial',
+					textAlign: 'center',
+					color: '#ffffff'
+				}
+			}
+		}
+	}
+});
+</script>
+<br><br>
+comentarios

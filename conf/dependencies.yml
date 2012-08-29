@@ -1,0 +1,8 @@
+# Application dependencies
+
+require:
+    - play
+    - play -> crud
+    - net.sf.flexjson -> flexjson 2.0
+    #- play -> morphia 1.2.9
+    
