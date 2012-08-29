@@ -3,6 +3,7 @@
 require:
     - play
     - play -> crud
+    #- play -> secure
     - net.sf.flexjson -> flexjson 2.0
     #- play -> morphia 1.2.9
     
