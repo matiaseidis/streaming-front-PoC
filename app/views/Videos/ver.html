@@ -1,7 +1,7 @@
 #{extends 'main.html' /} #{set title:"${video.nombre}" /}
 
 
-<h2>${video.nombre}</h2>
+<h2>${video.nombre} - video id: ${video.videoId}</h2>
 <br><br>
 
 
@@ -15,8 +15,8 @@ flowplayer("player", "@{'/public/javascripts/flowplayer/flowplayer-3.2.12.swf'}"
 		autoBuffering:true,
     	provider: 'pseudo',
 		scaling:'fit',
-		//url: 'http://186.23.108.31:8080/stream/?id=<?php print $output; ?>',
-				url:'http://localhost/evian.mp4',
+		url: 'http://localhost:8080/stream/?id=${video.videoId}',
+// 				url:'http://localhost/evian.mp4',
 		captionUrl: 'http://localhost/Luther-02x01-SP.srt'
 	}, 
 	plugins: {
