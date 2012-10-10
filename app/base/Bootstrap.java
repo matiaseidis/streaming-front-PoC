@@ -31,7 +31,7 @@ public class Bootstrap extends Job {
 			Pir pir = Pir.find("email", ""+i+email).first();
 			
 			if(pir == null){
-				pir = new Pir(""+i+nombre, ""+i+email, "200.200.200."+i, 1234);
+				pir = new Pir(""+i+nombre, ""+i+email, 1234);
 				pir.save();
 				System.out.println(pir.nombre);
 			}

@@ -22,7 +22,7 @@ public class VideoCreationFromIndexTest extends BaseFunctionalTest {
 		String email = ".test.email@cachos.com";
 		//creo usuarios 
 		for(int i = 0; i<videosToCreate; i++) {
-			Pir pir = new Pir(""+i+email, ""+i+email, "200.200.200."+i, 1234);
+			Pir pir = new Pir(""+i+email, ""+i+email, 1234);
 			pir.save();
 		}
 		//creo videos //TODO verque pinche si el user no existe

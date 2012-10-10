@@ -1,7 +1,7 @@
 #{extends 'main.html' /} #{set title:"${video.nombre}" /}
 
 
-<h2>${video.nombre} - video id: ${video.videoId}</h2>
+<h4>${video.nombre} - video id: ${video.videoId}</h4>
 <br><br>
 
 
@@ -11,12 +11,12 @@
 <script>
 flowplayer("player", "@{'/public/javascripts/flowplayer/flowplayer-3.2.12.swf'}", {
 	clip: {
-		autoPlay:false,
-		autoBuffering:true,
-    	provider: 'pseudo',
+ 		autoPlay:true,
+ 		autoBuffering:true,
+	    	provider: 'pseudo',
 		scaling:'fit',
-		url: 'http://localhost:8080/stream/?id=${video.videoId}',
-// 				url:'http://localhost/evian.mp4',
+ 		url: 'http://localhost:8080/stream/?id=${video.videoId}',
+//		url:'http://localhost/Luther.S02E03.720p.HDTV.x264.mp4',
 		captionUrl: 'http://localhost/Luther-02x01-SP.srt'
 	}, 
 	plugins: {

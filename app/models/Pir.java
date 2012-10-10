@@ -15,15 +15,12 @@ public class Pir extends Model {
 	@Required @Email
 	public String email;
 	@Required
-	public String ip;
-	@Required
 	public int puerto;
 
-	public Pir(String nombre, String email, String ip, int puerto) {
+	public Pir(String nombre, String email, int puerto) {
 		super();
 		this.nombre = nombre;
 		this.email = email;
-		this.ip = ip;
 		this.puerto = puerto;
 	}
 

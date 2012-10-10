@@ -17,7 +17,7 @@ public class CreateVideo extends UnitTest {
 	@Test @Ignore
 	public void createVideoRemotelyShouldWork() {
 
-		Pir user = new Pir("test-pir", "test@pir.com", "1.1.1.1", 8080);
+		Pir user = new Pir("test-pir", "test@pir.com", 8080);
 		user.save();
 
 		Map<String,String> params = new HashMap<String,String>();
