@@ -16,7 +16,7 @@ public class Bootstrap extends Job {
 //			Fixtures.loadModels("initial-data.yml");
 //		}
 
-		crearDummyVideos(20);
+//		crearDummyVideos(20);
 	}
 
 	private void crearDummyVideos(int cantidad) {
