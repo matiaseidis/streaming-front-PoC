@@ -10,12 +10,19 @@ import models.Video;
 import org.junit.Test;
 
 import play.mvc.Http.Response;
+import play.test.Fixtures;
 import remote.BaseFunctionalTest;
 
 public class VideoCreationFromIndexTest extends BaseFunctionalTest {
 	
 	@Test
 	public void videoCreationFromIndexWorks(){
+		
+		/*
+		 * limpiamos la db...
+		 */
+		Fixtures.deleteAllModels();
+		
 		int videosToCreate = 20;
 		String fileNameBase = "test.video.file.name.";
 		String videoId = "test.video.id.";
