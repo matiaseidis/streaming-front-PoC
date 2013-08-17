@@ -45,12 +45,6 @@ public class Video extends Model {
         return this;
     }
     
-//    public static List<Video> findTaggedWith(String... tags) {
-//        return Video.find(
-//            "select distinct v.id from Video v join v.tags as t where t.name in (:tags) group by v.id having count(t.id) = :size"
-//        ).bind("tags", tags).bind("size", tags.length).fetch(20);
-//    }
-    
     public static List<Video> findTaggedWith(String tag) {
         return Video.find(
             "select distinct v from Video v join v.tags as t where t.name like ?",

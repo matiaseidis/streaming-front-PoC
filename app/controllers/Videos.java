@@ -18,7 +18,6 @@ public class Videos extends CRUD {
 		try{
 			video.nombre = body.get("nombre").getAsString();
 			video.videoId = body.get("videoId").getAsString();
-			//			video.creado = new Date(body.get("creado").getAsLong());
 			video.creado = body.get("creado").getAsString();
 			video.duracion = body.get("duracion").getAsInt();
 			video.sinopsis = body.get("sinopsis").getAsString();

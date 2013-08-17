@@ -12,7 +12,6 @@ public class Pirs extends CRUD {
 	@Check("pir")
 	public static void misVideos(){
 
-//    	Pir pir = Pir.find("email=?", Security.connected()).first();
 		System.out.println("conn: "+Security.connected());
     	Pir pir = Pir.find("email", Security.connected()).first();
     	if(pir == null){
